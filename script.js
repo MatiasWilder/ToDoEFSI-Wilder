@@ -6,15 +6,13 @@ function nuevoElemento() {
   let tareaTexto = input.value.trim();
 
   if (tareaTexto === "") {
-    alert("No puede haber tarea sin título :)");
+    alert("No puede haber tarea sin título");
     return;
   }
 
   let tarea = {
     texto: tareaTexto,
     completado: false,
-    creado: new Date().toLocaleString(),
-    id: Date.now(),
   };
 
   tareas.push(tarea);
@@ -36,7 +34,7 @@ function actualizarLista() {
     }
 
     let btnCerrar = document.createElement("span");
-    btnCerrar.textContent = "×";
+    btnCerrar.textContent = "X";
     btnCerrar.className = "close";
     btnCerrar.onclick = function () {
       eliminarTarea(tarea.id);
